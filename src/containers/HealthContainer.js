@@ -13,13 +13,7 @@ class HealthContainer extends Component {
     this.state = {
       searchTerm: '',
       symptoms: [
-                  {id: 1,
-                   symptom: "Hiccups",
-                   treatment_name: "Scare Yourself",
-                   treatment_description: "Hire someone from internet to stalk you all day and jump out to surprise you while you are alone and vulnerable. The fear will cause the hiccups to disappear",
-                   bodypart: "Head",
-                   upvotes: 0,
-                   downvotes: 0 }
+                
                   ]
     }
 
@@ -41,14 +35,14 @@ class HealthContainer extends Component {
     return (
       <div className="row">
         <div id="bodyparts" className="col-sm-3">
-          "Bodypart Column"
+          <BodypartsContainer />
         </div>
         <div id="symptoms" className="col-sm-3">
           <Search searchTerm={this.state.searchTerm} handleChange={this.handleChange} />
           <SymptomsList symptoms={this.state.symptoms} searchTerm={this.state.searchTerm} />
         </div>
         <div id="treatments" className="col-sm-6">
-          "Treatment Column"
+          <TreatmentsContainer />
         </div>
       </div>
     )
