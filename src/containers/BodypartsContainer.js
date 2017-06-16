@@ -5,8 +5,8 @@ const bodyparts = ["Chest","Head","Legs","Upper Limbs","Stomach/Pelvis"]
 
 export default class BodypartsContainer extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       selectedBodyPart: null
@@ -18,7 +18,7 @@ export default class BodypartsContainer extends Component {
     return (
       <div>
         <ol className="list-unstyled">
-          { bodyparts.map((part, index) => <li key={index}>{part}</li>) }
+          { bodyparts.map((part, index) => <li><button key={index} onClick={this.props.setBodyPart}>{part}</button></li>) }
         </ol>
       </div>
     )

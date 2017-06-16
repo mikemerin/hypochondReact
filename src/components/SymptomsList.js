@@ -30,17 +30,17 @@ export default function SymptomsList(props) {
             </th>
           </tr>
 
-          {props.symptoms.map( symptom => {
+          {props.treatments.map( treatment => {
 
-               if (symptom.treatment_name.toLowerCase().match(props.searchTerm.toLowerCase())) {
+               if (treatment.treatment_name.toLowerCase().match(props.searchTerm.toLowerCase())) {
                 return (
-                  <tr key={symptom.id}>
-                    <td>{symptom.symptom}</td>
-                    <td>{symptom.treatment_name}</td>
-                    <td>{symptom.treatment_description}</td>
-                    <td>{symptom.bodypart}</td>
-                    <td>{symptom.upvotes}</td>
-                    <td>{symptom.downvotes}</td>
+                  <tr key={treatment.id}>
+                    <td>{treatment.symptom}</td>
+                    <td>{treatment.treatment_name}</td>
+                    <td>{treatment.treatment_description}</td>
+                    <td>{treatment.bodypart}</td>
+                    <td>{treatment.upvotes}</td>
+                    <td>{treatment.downvotes}</td>
                   </tr>
                 )
 

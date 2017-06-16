@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SymptomsAdapter from '../adapters'
+
 import SymptomsList from '../components/SymptomsList'
 import Search from '../components/Search'
 
@@ -24,10 +24,6 @@ class SymptomsContainer extends Component {
 
   }
 
-  componentDidMount() {
-    SymptomsAdapter.all()
-      .then(data => this.setState({ symptoms: data}) )
-  }
 
   handleChange(event) {
     this.setState({ searchTerm: event.target.value })
