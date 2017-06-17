@@ -1,8 +1,8 @@
 import React from 'react'
 
 
-export default function SymptomsList(props){
-  return(
+export default function SymptomsList(props) {
+  return (
     <div>
       <h4>Symptoms</h4>
       <ul className="list-unstyled">
