@@ -58,8 +58,10 @@ class HealthContainer extends Component {
   //
   //   })
   // }
-  voteMethod(){
-    console.log('hi')
+  voteMethod(type,treatment){
+    console.log(treatment)
+    treatment[type] += 1
+    this.updateTreatment(treatment.id, treatment)
   }
 
   // CRUD methods using adapter
@@ -109,7 +111,7 @@ class HealthContainer extends Component {
                  const id = routerProps.match.params.id
                  const treatment = this.state.allTreatments.find( treatment =>  treatment.id === parseInt(id) )
 
-                 return <TreatmentDetail treatment={treatment} deleteTreatment={this.deleteTreatment} voteMethod={this.voteMethod}/>
+                 return <TreatmentDetail treatment={treatment} voting={this.votingMethod} deleteTreatment={this.deleteTreatment} voteMethod={this.voteMethod}/>
               }} />
               <Route exact path='/:id/edit' render={(routerProps) => {
                 const id = routerProps.match.params.id
