@@ -22,6 +22,9 @@ export default class TreatmentsAdapter {
   }
 
   static update(id, formObj){
+    /*
+        params.require(:treatment).permit(:symptom,:treatment_name,:treatment_description,:bodypart,:upvotes,:downvotes)
+    */
     return fetch(`${URL}/${id}`, {
        method: 'PATCH',
        headers: {
@@ -29,7 +32,7 @@ export default class TreatmentsAdapter {
          'accept': 'application/json'
        },
        body: JSON.stringify({
-         treatment: {formObj}
+         treatment: formObj
        })
      })
   }

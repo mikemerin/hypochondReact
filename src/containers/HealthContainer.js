@@ -23,6 +23,8 @@ class HealthContainer extends Component {
     }
     this.setBodyPart = this.setBodyPart.bind(this)
     this.showTreatments = this.showTreatments.bind(this)
+    this.voteMethod = this.voteMethod.bind(this)
+
     this.createTreatment = this.createTreatment.bind(this)
     this.deleteTreatment = this.deleteTreatment.bind(this)
     this.updateTreatment = this.updateTreatment.bind(this)
@@ -50,6 +52,16 @@ class HealthContainer extends Component {
     })
     this.setState({ treatments: filteredTreatments })
   }
+  // selectedTreatment(treatment){
+  //   this.setState({
+  //     bodypart: treatment.bodypart,
+  //
+  //   })
+  // }
+  voteMethod(){
+    console.log('hi')
+  }
+
   // CRUD methods using adapter
   createTreatment(formObj){
     TreatmentsAdapter.create(formObj)
@@ -97,7 +109,7 @@ class HealthContainer extends Component {
                  const id = routerProps.match.params.id
                  const treatment = this.state.allTreatments.find( treatment =>  treatment.id === parseInt(id) )
 
-                 return <TreatmentDetail treatment={treatment} deleteTreatment={this.deleteTreatment}/>
+                 return <TreatmentDetail treatment={treatment} deleteTreatment={this.deleteTreatment} voteMethod={this.voteMethod}/>
               }} />
               <Route exact path='/:id/edit' render={(routerProps) => {
                 const id = routerProps.match.params.id
